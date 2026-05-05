@@ -1,0 +1,42 @@
+name: java-app-modernization-workshop
+version: 1.0.0
+description: |
+  APM manifest for the Java App Modernization workshop. Wires up a curated set
+  of agents and skills from github/awesome-copilot so every workshop attendee
+  gets the same Copilot context with one command (`apm install`).
+author: Ve Sharma
+
+# All dependencies are pinned to a specific awesome-copilot commit so the
+# workshop is bit-for-bit reproducible across cohorts. Bump the SHA to
+# refresh; `apm.lock.yaml` will track integrity hashes.
+# Pinned commit: github/awesome-copilot @ bb1e96ee40caa61f381ec7be83761bc64a52fe87 (May 2026)
+
+dependencies:
+  apm:
+    # ── Agents (multi-step workflows) ─────────────────────────────────────
+    # Java upgrades (e.g. Java 8/11/17 → 21, Spring Boot upgrades) via
+    # incremental plan + execute loops. Used by the Phase 2/3 modernization
+    # lab in workshops/bc-gov.md.
+    - github/awesome-copilot/agents/modernize-java.agent.md#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+
+    # Azure WAF-aligned architecture guidance for Phase 5 cloud-readiness
+    # discussion (App Service, AKS, observability, multi-region patterns).
+    - github/awesome-copilot/agents/azure-principal-architect.agent.md#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+
+    # ── Skills (focused capabilities) ─────────────────────────────────────
+    # Java engineering rails for Phase 3/4 of the lab.
+    - github/awesome-copilot/skills/java-docs#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+    - github/awesome-copilot/skills/java-junit#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+    - github/awesome-copilot/skills/java-refactoring-extract-method#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+
+    # GitHub Advanced Security skills — used in the governance section to
+    # show Copilot reasoning over CodeQL findings, Dependabot alerts, and
+    # secret-scanning hits the way BC Gov security teams will expect.
+    - github/awesome-copilot/skills/codeql#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+    - github/awesome-copilot/skills/dependabot#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+    - github/awesome-copilot/skills/secret-scanning#bb1e96ee40caa61f381ec7be83761bc64a52fe87
+
+  mcp: []
+
+includes: auto
+scripts: {}

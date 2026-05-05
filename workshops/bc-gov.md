@@ -132,6 +132,27 @@ What it does:
 - Pins integrity hashes in `apm.lock.yaml` for full provenance.
 - Gates transitive MCP servers behind explicit trust prompts.
 
+✅ **This repo dogfoods APM.** [`apm.yml`](../apm.yml) pins **2 agents** and
+**6 skills** from `github/awesome-copilot` to a known-good commit:
+
+| Type | Package | Used in |
+|---|---|---|
+| Agent | `modernize-java` | Phase 2/3 — incremental Java upgrades |
+| Agent | `azure-principal-architect` | Phase 5 — Azure Well-Architected guidance |
+| Skill | `java-docs` | Phase 3 — Javadoc best practices |
+| Skill | `java-junit` | Phase 4 — JUnit 5 patterns |
+| Skill | `java-refactoring-extract-method` | Phase 3 — refactoring rails |
+| Skill | `codeql` | Governance — reasoning over CodeQL findings |
+| Skill | `dependabot` | Governance — triaging Dependabot alerts |
+| Skill | `secret-scanning` | Governance — handling secret-scanning hits |
+
+The integrated files are **committed** under [`.github/agents/`](../.github/agents/)
+and [`.agents/skills/`](../.agents/skills/), so Copilot picks them up the moment
+you open the repo in VS Code — even if you have not installed APM yet. Install APM
+only if you want to refresh, audit, or add packages. See
+[Pre-configured Copilot context (APM)](../README.md#-pre-configured-copilot-context-apm)
+in the main README for the full table and commands.
+
 ✅ Why APM matters for BC Gov:
 
 - **Control actions** → block unsafe or unsanctioned packages before they reach an agent.
@@ -327,6 +348,16 @@ Participants **must** have the following installed and signed in:
 - **[Git CLI](https://git-scm.com/downloads)** and **[GitHub CLI](https://cli.github.com/)** (`gh`).
 - **Java JDK 17 or 21** (the lab covers an upgrade path from Java 8 → 17+).
 - **[Maven 3.6+](https://maven.apache.org/install.html)** and **[Docker Desktop](https://docs.docker.com/desktop/)** (Docker must be **running** during the lab — PostgreSQL and RabbitMQ run in containers).
+- *(Optional but recommended)* **[Microsoft APM](https://github.com/microsoft/apm)** (Agent Package Manager) — pre-configures Copilot with the workshop's pinned agents/skills:
+  ```bash
+  # macOS
+  brew install microsoft/apm/apm
+  # Linux / macOS (alternative)
+  curl -sSL https://aka.ms/apm-unix | sh
+  # Windows (PowerShell)
+  irm https://aka.ms/apm-windows | iex
+  ```
+  After cloning the repo, run `apm install` from its root. The integrated agents/skills are also committed, so Copilot will pick them up even without APM installed.
 - Repo access: confirm you can open `https://github.com/VeVarunSharma/java-app-modernization-workshop` in your browser, then clone:
   `git clone https://github.com/VeVarunSharma/java-app-modernization-workshop.git`
 
@@ -346,6 +377,9 @@ Run through this short checklist on your laptop *before* the session:
 - [ ] Repo opens successfully:
       `git clone https://github.com/VeVarunSharma/java-app-modernization-workshop.git && code java-app-modernization-workshop`.
 - [ ] **Docker is running:** `docker version` returns both Client and Server info.
+- [ ] *(Optional but recommended)* `apm --version` works, then `apm install` from the
+      repo root reports `Installed 8 APM dependencies` and `apm audit` reports
+      `no issues found`.
 - [ ] Java project builds locally:
   ```bash
   # macOS / Linux
