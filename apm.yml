@@ -16,7 +16,7 @@ dependencies:
     # ── Agents (multi-step workflows) ─────────────────────────────────────
     # Java upgrades (e.g. Java 8/11/17 → 21, Spring Boot upgrades) via
     # incremental plan + execute loops. Used by the Phase 2/3 modernization
-    # lab in workshops/bc-gov.md.
+    # lab in asset-manager/bc-gov.md.
     - github/awesome-copilot/agents/modernize-java.agent.md#bb1e96ee40caa61f381ec7be83761bc64a52fe87
 
     # Azure WAF-aligned architecture guidance for Phase 5 cloud-readiness
