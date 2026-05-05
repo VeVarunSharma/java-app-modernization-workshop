@@ -15,25 +15,27 @@ or take home as a reference.
 
 ## 🧑‍🏫 Workshops
 
-This repo backs multiple cohort workshops. Each cohort gets a dedicated guide under
-[`workshops/`](workshops/) covering its agenda, prompts, and pre-workshop validation.
+This repo backs multiple cohort workshops. Each cohort gets a dedicated guide,
+colocated with its primary lab folder, covering its agenda, prompts, and
+pre-workshop validation.
 
 | Cohort | Date | Guide |
 |---|---|---|
-| 🇨🇦 **Government of British Columbia** | May 5, 2026 | [`workshops/bc-gov.md`](workshops/bc-gov.md) |
+| 🇨🇦 **Government of British Columbia** | May 5, 2026 | [`asset-manager/bc-gov.md`](asset-manager/bc-gov.md) |
 
 > ### 📣 Government of BC participants — start here
 >
-> Open **[`workshops/bc-gov.md`](workshops/bc-gov.md)** for your full agenda, the
+> Open **[`asset-manager/bc-gov.md`](asset-manager/bc-gov.md)** for your full agenda, the
 > Phase 1–5 lab prompts, governance/APM context, and the pre-workshop validation
-> checklist. The lab itself runs out of [`asset-manager/`](asset-manager).
+> checklist. The lab itself runs out of [`asset-manager/`](asset-manager) — open that
+> folder as your VS Code workspace root and the guide will be right there.
 >
 > **TL;DR before the session:**
-> 1. Install **everything** in the [BC Gov pre-workshop requirements](workshops/bc-gov.md#-pre-workshop-requirements)
+> 1. Install **everything** in the [BC Gov pre-workshop requirements](asset-manager/bc-gov.md#-pre-workshop-requirements)
 >    (VS Code + Copilot + Copilot Chat + **App Modernization for Java** extension,
 >    Java 17/21, Maven, Docker, Git, GitHub CLI, and the standalone **Copilot CLI**).
 > 2. Clone this repo: `git clone https://github.com/VeVarunSharma/java-app-modernization-workshop.git`
-> 3. Run the [BC Gov pre-workshop validation checklist](workshops/bc-gov.md#pre-workshop-validation).
+> 3. Run the [BC Gov pre-workshop validation checklist](asset-manager/bc-gov.md#pre-workshop-validation).
 > 4. Ping **Ve Sharma** *before* the workshop if anything fails.
 
 ---
@@ -224,16 +226,16 @@ documentation) in an internal repo or Teams/SharePoint hub. Track success via
 developer productivity, PR cycle time, code quality, and backlog reduction.
 
 A worked example of the full Train-the-Trainer agenda is in
-[`workshops/bc-gov.md`](workshops/bc-gov.md) — clone it as a starting point for your
+[`asset-manager/bc-gov.md`](asset-manager/bc-gov.md) — clone it as a starting point for your
 own cohort.
 
 ---
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). To add a new cohort guide, drop a new
-markdown file in [`workshops/`](workshops/) and add a row to the **Workshops** table
-above.
+See [CONTRIBUTING.md](CONTRIBUTING.md). To add a new cohort guide, drop a
+markdown file next to the lab it targets (e.g. `asset-manager/<cohort>.md`) and
+add a row to the **Workshops** table above.
 
 ## 📄 License
 

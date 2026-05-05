@@ -3,7 +3,7 @@
 **Date:** May 5, 2026
 **Cohort:** Government of British Columbia
 **Format:** Train-the-Trainer (demo + hands-on + enablement)
-**Primary lab:** [`asset-manager/`](../asset-manager) — Spring Boot Java app → Azure
+**Primary lab:** [`asset-manager/`](.) — Spring Boot Java app → Azure
 
 ## Facilitators
 
@@ -33,7 +33,7 @@ By the end of this session, participants will:
 | 2 | GitHub Copilot: What's New | 15 min |
 | 3 | Copilot CLI + Agent Workflows | 30 min |
 | 4 | Agentic Governance & Policy Controls | 20 min |
-| 5 | **Java App Modernization Lab** ([`asset-manager/`](../asset-manager)) | 1.5 hr |
+| 5 | **Java App Modernization Lab** ([`asset-manager/`](.)) | 1.5 hr |
 | 6 | Train-the-Trainer Model | 45 min |
 | 7 | Governance + Public-Sector Considerations | 15 min |
 
@@ -173,8 +173,8 @@ in the main README for the full table and commands.
 ## 5️⃣ Java App Modernization Lab (1.5 hr)
 
 **Repo:** <https://github.com/VeVarunSharma/java-app-modernization-workshop>
-**Lab:** [`asset-manager/`](../asset-manager) — full guide and screenshots in
-[`asset-manager/README.md`](../asset-manager/README.md).
+**Lab:** [`asset-manager/`](.) — full guide and screenshots in
+[`asset-manager/README.md`](README.md).
 
 ### 🎯 Objective
 
