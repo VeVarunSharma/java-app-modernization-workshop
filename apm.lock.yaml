@@ -1,0 +1,86 @@
+lockfile_version: '1'
+generated_at: '2026-05-05T04:23:38.546523+00:00'
+apm_version: 0.12.1
+dependencies:
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: agents/azure-principal-architect.agent.md
+  is_virtual: true
+  deployed_files:
+  - .github/agents/azure-principal-architect.agent.md
+  deployed_file_hashes:
+    .github/agents/azure-principal-architect.agent.md: sha256:28845359969fc32d34202f1e53376da62ed0c3d14bd3a2d52137ee1f8f9be3a9
+  content_hash: sha256:8d13bb5b08a91a878f488408b4d975ba0fbd20088b451b1923950819e7b6e4b5
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: agents/modernize-java.agent.md
+  is_virtual: true
+  deployed_files:
+  - .github/agents/modernize-java.agent.md
+  deployed_file_hashes:
+    .github/agents/modernize-java.agent.md: sha256:a7ca9127de1206c88a672dcb1c31efcb3afc3c705f07cc310ce1bf650ac985c5
+  content_hash: sha256:095ce36ef8c32150034421f0ba958f21276c6a97e32494c41a41db85835d8690
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/codeql
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/codeql
+  content_hash: sha256:e30d50fc7a2591c7f9e08faf83c31e7a67625a27233da21fcd2dafc7055af87b
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/dependabot
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/dependabot
+  content_hash: sha256:4b10ce9886daf88db0de26c4cf0ef0c254ec1c594d9bf1a477ea850abdd940b5
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/java-docs
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/java-docs
+  content_hash: sha256:76cf49efcd6e99d95031c78e56615dbaf641a756e852acf7e87f9197dfab43e0
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/java-junit
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/java-junit
+  content_hash: sha256:fbf3cb0d47ffb44bdb6e1ebcc4d89dd7083208efdfc5b88f316c8bc2b58250b5
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/java-refactoring-extract-method
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/java-refactoring-extract-method
+  content_hash: sha256:8a467a2fe1f1d8c14a2c344dfef7060f5cf1300ad5b4d4f036b336c78f6952ab
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  resolved_ref: bb1e96ee40caa61f381ec7be83761bc64a52fe87
+  virtual_path: skills/secret-scanning
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/secret-scanning
+  content_hash: sha256:20384724e006def64de6005b90b6a65be97342605f3c20e4303c036e2d5171f7

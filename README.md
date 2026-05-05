@@ -54,6 +54,58 @@ This repo backs multiple cohort workshops. Each cohort gets a dedicated guide un
 
 ---
 
+## 🤖 Pre-configured Copilot context (APM)
+
+This repo ships with an [`apm.yml`](apm.yml) manifest, managed by
+**[Microsoft APM](https://github.com/microsoft/apm)** (Agent Package Manager). It
+pins a curated set of workshop-relevant agents and skills from
+[`github/awesome-copilot`](https://github.com/github/awesome-copilot) so every
+attendee gets the **same Copilot context** with one command.
+
+The integrated files are committed under [`.github/agents/`](.github/agents/) and
+[`.agents/skills/`](.agents/skills/) — meaning **Copilot in VS Code will pick them
+up the moment you open the repo**, even if you haven't installed APM yet. You only
+need APM to refresh, audit, or add more packages.
+
+| Type | Package | What it brings to the workshop |
+|---|---|---|
+| Agent | [`modernize-java`](https://github.com/github/awesome-copilot/blob/main/agents/modernize-java.agent.md) | Incremental Java upgrades (e.g. 8/11/17 → 21, Spring Boot 2 → 3) — Phase 2/3 of the lab |
+| Agent | [`azure-principal-architect`](https://github.com/github/awesome-copilot/blob/main/agents/azure-principal-architect.agent.md) | Azure Well-Architected guidance — Phase 5 cloud-readiness discussion |
+| Skill | [`java-docs`](https://github.com/github/awesome-copilot/tree/main/skills/java-docs) | Javadoc best practices |
+| Skill | [`java-junit`](https://github.com/github/awesome-copilot/tree/main/skills/java-junit) | JUnit 5 patterns (incl. parameterized tests) |
+| Skill | [`java-refactoring-extract-method`](https://github.com/github/awesome-copilot/tree/main/skills/java-refactoring-extract-method) | Extract-method refactoring |
+| Skill | [`codeql`](https://github.com/github/awesome-copilot/tree/main/skills/codeql) | Reasoning over CodeQL findings |
+| Skill | [`dependabot`](https://github.com/github/awesome-copilot/tree/main/skills/dependabot) | Triaging Dependabot alerts |
+| Skill | [`secret-scanning`](https://github.com/github/awesome-copilot/tree/main/skills/secret-scanning) | Handling secret-scanning hits |
+
+**Install APM (optional, for refresh/audit):**
+
+```bash
+# macOS
+brew install microsoft/apm/apm
+# Linux / macOS (alternative)
+curl -sSL https://aka.ms/apm-unix | sh
+# Windows (PowerShell)
+irm https://aka.ms/apm-windows | iex
+```
+
+**Common APM commands** *(run from the repo root)*:
+
+```bash
+apm install                  # hydrate dependencies into .github/agents/ and .agents/skills/
+apm audit                    # scan installed packages for hidden-Unicode prompt-injection
+apm deps tree                # show what's pinned and which commit
+apm install --update         # refresh to the latest awesome-copilot, regenerates apm.lock.yaml
+```
+
+The `apm_modules/` cache is **gitignored** (it's per-machine). The
+[`apm.yml`](apm.yml) manifest, [`apm.lock.yaml`](apm.lock.yaml) (with sha256
+content hashes), and the integrated `.github/agents/` + `.agents/skills/`
+directories are **committed** — that's how the workshop is bit-for-bit
+reproducible across cohorts.
+
+---
+
 ## ✅ Prerequisites
 
 ### Common (all labs)
@@ -111,6 +163,10 @@ Run through this **before** any workshop to catch setup issues early:
 - [ ] You can clone and open this repo:
       `git clone https://github.com/VeVarunSharma/java-app-modernization-workshop.git && code java-app-modernization-workshop`.
 - [ ] **Docker is running:** `docker version` returns both Client and Server info.
+- [ ] *(Optional but recommended)* **APM** can refresh the bundled Copilot context: install
+      `apm` (see [Pre-configured Copilot context](#-pre-configured-copilot-context-apm) above),
+      then run `apm install` from the repo root and verify it ends with
+      `Installed 8 APM dependencies` and `apm audit` reports `no issues found`.
 - [ ] **Java labs:** the primary lab builds locally —
   ```bash
   # macOS / Linux
@@ -142,7 +198,8 @@ four control surfaces:
 4. **APM — Agent Package Manager** — the open-source dependency manager for AI
    agents (`apm.yml` for instructions/skills/prompts/MCP, `apm-policy.yml` to
    constrain what an org will allow, lockfile + integrity hashes for provenance).
-   Repo: <https://github.com/microsoft/apm>.
+   Repo: <https://github.com/microsoft/apm>. **This repo dogfoods APM** — see
+   [Pre-configured Copilot context (APM)](#-pre-configured-copilot-context-apm) above.
 
 For data-handling and compliance posture, see the
 [GitHub Copilot Trust Center](https://github.com/trust-center) and
